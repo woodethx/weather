@@ -7,7 +7,15 @@ export default async function getWeatherData(location){
         address: raw.resolvedAddress,
         currentSky: raw.currentConditions.conditions,
         currentTemp: raw.currentConditions.temp,
+        hours: [],
         days: []
+    }
+    for (let i = 0; i < 24; i++) {
+        const r = raw.days[0].hours[i];
+        prettyWeather.hours[i] = {
+            sky: r.conditions,
+            temp: r.temp
+        }
     }
     for (let i = 0; i < 7; i++) {
         const r = raw.days[i];
