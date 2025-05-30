@@ -1,28 +1,26 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
-html{
+html,
+body{
     width: 100%;
-    height: 100%;
+    min-height:100vh;
 }
 h1{
     text-align: center;
 }
 body{
     background-color: aliceblue;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .container{
-    width: 40vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
+    width:40vw;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1rem; 
 }
 .subCon{
     width: 100%;
@@ -40,15 +38,19 @@ input{
     text-align: center;
     padding: 5px;
     height: 3vh;
+    margin-top: 5vh;
 }
-.now{
+#now{
     height: 35vh;
     display: flex;
     align-items: center;
-    font-size: 7rem;
+    font-size: 6rem;
     padding-right: 15px;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10vh;
 }
-.now > img{
+#now > img{
     width: 50%;
     height: 80%;
     font-size: 1.35rem;
@@ -60,8 +62,57 @@ input{
     align-items: center;
     overflow-x: scroll;
     gap: 2vw;
+    margin-bottom: 10vh;
 }
 .hour{
     flex: 0 0 6rem;
     text-align: center;
+}
+#week{
+    height: 100vh;
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.day{
+    display: grid;
+    grid-template-rows: 10% 3fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 10%;
+    gap: 5%;
+    border-bottom: solid black 2px;
+    border-radius: 10px;
+}
+.day > h3{
+    grid-area: 1 / 1 / 2 / 3;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.day > h4{
+    font-size: 2rem;
+    margin-left: 5%;
+}
+.day > img{
+    margin-top: 5%;
+}
+.units{
+    position:fixed;
+    top: 2%;
+    left: 2%;
+    display: flex;
+    gap: .5rem;
+}
+.faded{
+    color: lightgray;
+}
+button{
+    border: none;
+    background-color: transparent;
+}
+button:hover{
+    cursor:pointer;
 }
